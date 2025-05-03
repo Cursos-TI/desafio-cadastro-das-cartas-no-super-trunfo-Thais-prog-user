@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 // Desafio Super Trunfo - Países
-// Tema 1 - Cadastro das Cartas
+// Tema 1 - Cadastro das Cartas e resultado das comparações
 // Este código inicial serve como base para o desenvolvimento do sistema de cadastro de cartas de cidades.
 
 int main() {
@@ -19,7 +19,7 @@ int main() {
 	float pibPerCapita2 = pib2 / populacao2; 
 
     
-    // Exibição dos Dados das Cartas
+    // Exibição dos dados das duas Cartas
     printf("\nCarta 1:\n");
     printf("Estado: %c\n", estado1);
     printf("Codigo: %s\n", codigo1);
