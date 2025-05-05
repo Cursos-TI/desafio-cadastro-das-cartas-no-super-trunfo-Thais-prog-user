@@ -1,8 +1,9 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 // Desafio Super Trunfo - Países
-// Tema 1 - Cadastro das Cartas e resultado das comparações
-// Este código inicial serve como base para o desenvolvimento do sistema de cadastro de cartas de cidades.
+// Tema 2 - Comparação das cartas do jogo.
+// Este código serve para o jogador fazer a escolha de quais atributos ele vai comparar.
 
 int main() {
     // Definições de variáveis para cada atributo das cidades.
@@ -17,10 +18,12 @@ int main() {
     float quociente2 = populacao2 / area2;
     float pibPerCapita1 = pib1 / populacao1;
 	float pibPerCapita2 = pib2 / populacao2; 
-
+	int escolhaJogador;
+	
     
     // Exibição dos dados das duas Cartas
-    printf("\nCarta 1:\n");
+    printf("*** Cartas do jogo! ***\n");
+    printf("\nCarta 1\n");
     printf("Estado: %c\n", estado1);
     printf("Codigo: %s\n", codigo1);
     printf("Nome da cidade: %s\n", nomeCidade1);
@@ -31,7 +34,7 @@ int main() {
     printf("Densidade populacional: %.2f\n", quociente1);
     printf("PIB per capita: %.2f\n" , pibPerCapita1);
 
-    printf("\nCarta 2:\n");
+    printf("\nCarta 2\n");
     printf("Estado: %c\n", estado2);
     printf("Codigo: %s\n", codigo2);
     printf("Nome da cidade: %s\n", nomeCidade2);
@@ -49,60 +52,70 @@ int main() {
 	
 	
 	//Início dos resultados das comparações das cartas
-	printf("\n*** Resultado das comparacoes ***\n");
-    printf("\nTema: Populacao\n");
+	printf("\n*** Vamos jogar! ***\n");
+    printf("\nSelecione o poder a ser comparado:\n");
     
-    printf("Carta 1 - Contagem (MG): %.2f\n" , populacao1);
-    printf("Carta 2 - Gramado (RS): %.2f\n" , populacao2);
-    if(populacao1 > populacao2){
-    	printf("Carta 1 venceu!\n");
+	printf("\n1. Populacao\n");
+	printf("2. Area\n");
+	printf("3. PIB\n");
+	printf("4. Pontos turisticos\n");
+	printf("5. Desidade populaional\n");
+	printf("6. PIB per capita\n");
+	printf("\nEscolha: ");
+    scanf("%d", &escolhaJogador);
+    
+    
+    switch(escolhaJogador)
+	{
+	case 1:
+		printf("1. Populacao - \n");
+		break;
+	case 2:
+		printf("2. Area - \n");
+		break;
+	case 3:
+		printf("3. PIB - \n");
+		break;
+	case 4:
+		printf("4. Pontos turisticos - \n");
+		break;
+	case 5:
+		printf("5. Densidade populacional - \n");
+		break;
+	case 6: 
+		printf("6. PIB per capita - \n");
+		break;
+	default:	
+		printf("Opcao invalida!\n");
+		break;
 	}
-	
-	printf("\nTema: Area ocupada\n");
-	printf("Carta 1 - Contagem (MG): %.2f\n" , area1);
-    printf("Carta 2 - Gramado (RS): %.2f\n" , area2);
-    if(area1 > area2){
-		printf("Carta 1 venceu!\n");
-	}else {
-		printf("Carta 2 venceu!\n");
-	}
-	
-	printf("\nTema: PIB\n");
-	printf("Carta 1 - Contagem (MG): %.2f\n" , pib1);
-    printf("Carta 2 - Gramado (RS): %.2f\n" , pib2);
-    if(pib1 > pib2){
-		printf("Carta 1 venceu!\n");
-	}else {
-		printf("Carta 2 venceu!\n");
-	}
-
-	printf("\nTema: Quantidade de pontos turisticos:\n");
-	printf("Carta 1 - Contagem (MG): %d\n" , pontosTuristicos1);
-	printf("Carta 2 - Gramado (RS): %d\n" , pontosTuristicos2);
-	if(pontosTuristicos1 > pontosTuristicos2){
-		printf("Carta 1 venceu!\n");
-	}else{
-		printf("Carta 2 venceu!\n");
-	}
-	
-	printf("\nDensidade Populacional:\n");
-	printf("Carta 1 - Contagem (MG): %.2f\n" , quociente1);
-	printf("Carta 2 - Gramado (RS): %.2f\n" , quociente2);
-	if(quociente1 < quociente2){
-		printf("Carta 1 venceu!\n");
-	}else{
-		printf("Carta 2 venceu!\n");
-	}
-	
-	printf("\nTema: PIB per capita:\n");
-	printf("Carta 1 - Contagem (MG): %.2f\n" , pibPerCapita1);
-	printf("Carta 2 - Gramado (RS): %.2f\n" , pibPerCapita2);
-	if(pibPerCapita1 > pibPerCapita2){
-		printf("Carta 1 venceu!\n");
-	}else{
-		printf("Carta 2 venceu!\n");
-	}
-	
+   
+   if (escolhaJogador == 1) 
+   {
+   	printf("Carta 1 venceu! Populacao de Contagem: 621.863\n");
+   } 
+   if (escolhaJogador == 2)
+   {
+   	printf("Carta 2 venceu! Area de Gramado: 239.341\n");
+   } 
+   if (escolhaJogador == 3)
+   {
+   	printf("Carta 1 venceu! PIB de Contagem: 36.48\n");
+   }
+   if (escolhaJogador == 4)
+   {
+   	printf("Carta 2 venceu! Pontos turisticos de Gramado: 35\n");
+   }
+   if (escolhaJogador == 5)
+   {
+   	printf("Carta 2 venceu! Densidade populacional de Gramado: 0.17\n");
+   }
+   if (escolhaJogador == 6)
+   {
+   	printf("Carta 2 venceu! PIB per capita de Gramado: 0.69\n");
+   }	
+		
+		
 	
     return 0;
 }
